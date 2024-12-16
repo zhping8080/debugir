@@ -13,6 +13,7 @@ set(CMAKE_CXX_STANDARD 20)
 message(STATUS "We are on a ${CMAKE_SYSTEM_NAME} system")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
+set(CMAKE_BUILD_TYPE Debug)
 # Print build type: Debug/Release etc.
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 #
@@ -20,7 +21,7 @@ message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 #
 # LLVM stuff
 if(NOT DEFINED DEBUGIR_LLVM_VERSION)
-  set(DEBUGIR_LLVM_VERSION 18.1)
+  set(DEBUGIR_LLVM_VERSION 15.0)
 endif()
 find_package(LLVM ${DEBUGIR_LLVM_VERSION} REQUIRED CONFIG)
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
